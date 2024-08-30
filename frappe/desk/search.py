@@ -33,7 +33,7 @@ class LinkSearchResults(TypedDict):
 
 
 # this is called by the Link Field
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def search_link(
 	doctype: str,
 	txt: str,
