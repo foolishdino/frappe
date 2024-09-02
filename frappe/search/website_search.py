@@ -44,9 +44,8 @@ class WebsiteSearch(FullTextSearch):
 			update_progress_bar("Retrieving Routes", i, len(routes))
 			self._items_to_index += [self.get_document_to_index(route)]
 
-		print()
 
-		return self.get_items_to_index()
+		return self._items_to_index
 
 	def get_document_to_index(self, route: str) -> frappe._dict | None:
 		"""Render a page and parse it using `BeautifulSoup`.
